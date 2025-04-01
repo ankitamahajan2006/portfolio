@@ -10,20 +10,38 @@
 
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
 </head>
 <body class="bg-gray-100">
 
     <!-- Navbar -->
-<nav class="fixed top-0 left-0 w-full bg-white shadow-md p-4 z-50">
-    <ul class="flex justify-center space-x-6 text-lg font-semibold">
+<nav class="sticky top-0 bg-white shadow-md p-4 z-50" >
+    <ul class="hidden md:flex justify-center space-x-6 text-lg font-semibold">
         <li><a href="#hero" class="hover:text-blue-500">Home</a></li>
         <li><a href="#about" class="hover:text-blue-500">About</a></li>
         <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
         <li><a href="#skills" class="hover:text-blue-500">Skills</a></li>
         
     </ul>
+
+<button id="menu-btn" class="md:hidden block text-2xl">
+    ☰
+</button>
+<ul id="mobile-menu" class="hidden flex flex-col space-y-4 mt-2 bg-white shadow-md p-4">
+    <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+    <li><a href="#about" class="hover:text-blue-500">About</a></li>
+    <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+    <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+</ul>
 </nav>
+<script>
+    document.getElementById('menu-btn').addEventListener('click', function () {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden'); // Toggle visibility
+    });
+</script>
+
 
 <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -38,12 +56,14 @@
 
 
     <!-- Hero Section -->
-    <section id="hero" class="text-center mt-20" data-aos="fade-up">
-        <img src="3.png" class="mx-auto rounded-full border-4 border-blue-500">
-        <h1 class="text-4xl font-bold text-blue-700">
+    <section id="hero" class="text-center mt-10" data-aos="fade-up">
+        <img src="3.png" class="mx-auto rounded-full border-4 border-blue-500 animate__animated animate__fadeIn">
+        <br>
+        <h1 class="text-4xl font-bold text-blue-700 animate__animated animate__bounce">
             I'm a <span id="changingText" class="text-green-500">Web Developer</span>
         </h1>
-        <p class="text-gray-600 mt-2">I create beautiful, responsive websites.</p>
+        <h1 class="text-4xl font-bold text-blue-700 animate__animated animate__fadeIn">Welcome to My Portfolio</h1>
+        <p class="text-gray-600 mt-2 animate__animated animate__fadeIn">I create beautiful, responsive websites.</p>
     </section>
 
     <!-- About Me Section -->
@@ -64,20 +84,20 @@
         <div class="grid md:grid-cols-2 gap-6 mt-6 max-w-4xl mx-auto">
 
             <!-- Project 1 -->
-            <div class="bg-white shadow-lg p-4 rounded">
+            <div class="bg-white shadow-lg p-4 rounded transform transition-all hover:scale-105 hover:shadow-xl">
                 <h3 class="text-xl font-bold text-gray-800">Parlour Appointment</h3>
-                <p class="text-gray-600">A Parlour Appointment System using PHP, HTML, CSS, MySQL, and JavaScript allows users to book and manage appointments online. It displays services, lets users schedule appointments, and view bookings. The system stores data in MySQL, processes bookings with PHP, and enhances interactivity using JavaScript, ensuring a seamless experience for customers and staff. 🚀
-                <button class="bg-black text-white px-4 py-2 rounded mt-4 animate-bounce">
-                    <a href="https://ankitamahajan2006.github.io/Parlour_Appointment/" class="text-gray-500">View Project</a>
+                <p class="text-gray-600">A Parlour Appointment System using PHP, HTML, CSS, MySQL, and JavaScript allows users to book and manage appointments online. It displays services, lets users schedule appointments, and view bookings. The system stores data in MySQL, processes bookings with PHP, and enhances interactivity using JavaScript, ensuring a seamless experience for customers and staff.    
+                <button class="bg-black text-white px-4 py-2 rounded mt-4 transition-all duration-300 hover:bg-blue-500 hover:text-white">
+                    <a href="https://ankitamahajan2006.github.io/Parlour_Appointment/" class="text-lightgray-500 mt-2 inline-block">View Project</a>
                 </button>
             </div>
 
             <!-- Project 2 -->
-            <div class="bg-white shadow-lg p-4 rounded">
+            <div class="bg-white shadow-lg p-4 rounded transform transition-all hover:scale-105 hover:shadow-xl">
                 <h3 class="text-xl font-bold text-gray-800">Human Rights</h3>
                 <p class="text-gray-600">A Human Rights Website built using HTML, CSS, JavaScript, and Bootstrap raises awareness about fundamental rights. It includes five pages: Home, About, Issue, Action, and Contact, providing information on human rights, key issues, and ways to take action. The responsive design ensures accessibility, making it an effective platform for education and advocacy. 🚀</p>
-                <button class="bg-black text-white px-4 py-2 rounded mt-4 animate-bounce">
-                    <a href="https://ankitamahajan2006.github.io/Hunam-Rights/" class="text-gray-500">View Project</a>
+                <button class="bg-black text-white px-4 py-2 rounded mt-4 transition-all duration-300 hover:bg-blue-500 hover:text-white">
+                    <a href="https://ankitamahajan2006.github.io/Hunam-Rights/" class="text-lightgray-500 mt-2 inline-block">View Project</a>
                 </button>
             </div>
 
@@ -92,28 +112,70 @@
             <span class="bg-green-500 text-white px-4 py-2 rounded">CSS</span>
             <span class="bg-yellow-500 text-white px-4 py-2 rounded">JavaScript</span>
             <span class="bg-blue-500 text-white px-4 py-2 rounded">Tailwind CSS</span>
-            <span class="bg-green-500 text-white px-4 py-2 rounded">React.js</span>
+        
         </div>
+    </section>
+
+    <section id="contact" class="mt-10 px-6 max-w-lg mx-auto bg-white shadow-lg rounded-lg p-6">
+        <h2 class="text-3xl font-semibold text-center text-blue-600">Contact Me</h2>
+    
+        <form method="post" class="mt-6">
+            <!-- Name Field -->
+            <div class="mb-4">
+                <label class="block text-gray-700 font-semibold">Name</label>
+                <input type="text" placeholder="Enter your name"
+                    class="w-full mt-2 p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+    
+            <!-- Email Field -->
+            <div class="mb-4">
+                <label class="block text-gray-700 font-semibold">Email</label>
+                <input type="email" placeholder="Enter your email"
+                    class="w-full mt-2 p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+    
+            <!-- Message Field -->
+            <div class="mb-4">
+                <label class="block text-gray-700 font-semibold">Message</label>
+                <textarea rows="4" placeholder="Write your message..."
+                    class="w-full mt-2 p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            </div>
+    
+            <!-- Submit Button -->
+            <button type="submit"
+                class="w-full bg-blue-500 text-white py-2 rounded transition-all duration-300 hover:bg-green-500 animate-bounce">
+                Send Message
+            </button>
+        </form>
     </section>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white text-center p-4 mt-10">
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const textArray = ["Web Developer", "UI/UX Designer", "Problem Solver"];
-                let index = 0;
-                
-                function changeText() {
-                    document.getElementById("changingText").innerText = textArray[index];
-                    index = (index + 1) % textArray.length;
-                }
+             document.addEventListener("DOMContentLoaded", function () {
+        const textArray = ["Web Developer", "UI/UX Designer", "Tech Enthusiast", "Problem Solver"];
+        let index = 0;
+        let changingText = document.getElementById("changingText");
 
-                setInterval(changeText, 2000);
-            });
+        function changeText() {
+            changingText.classList.add("animate__animated", "animate__fadeOut"); // Fade Out Effect
+            setTimeout(() => {
+                changingText.innerText = textArray[index];
+                index = (index + 1) % textArray.length;
+                changingText.classList.remove("animate__fadeOut");
+                changingText.classList.add("animate__fadeIn"); // Fade In Effect
+            }, 500); // Delay before text change
+        }
+
+        setInterval(changeText, 2000); // 2 सेकंदांनी बदल
+    });
+        
         </script>
                 
         &copy; 2025 Ankita Mahajan. All Rights Reserved.
     </footer>
+
+    
 
     <!-- AOS JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
