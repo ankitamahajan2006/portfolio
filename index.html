@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+<nav class="fixed top-0 left-0 w-full bg-white shadow-md p-4 z-50">
+    <ul class="flex justify-center space-x-6 text-lg font-semibold">
+        <li><a href="#hero" class="hover:text-blue-500">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-500">About</a></li>
+        <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+        <li><a href="#skills" class="hover:text-blue-500">Skills</a></li>
+        
+    </ul>
+</nav>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+
+    <!-- Hero Section -->
+    <section id="hero" class="text-center mt-20" data-aos="fade-up">
+        <img src="3.png" class="mx-auto rounded-full border-4 border-blue-500">
+        <h1 class="text-4xl font-bold text-blue-700">
+            I'm a <span id="changingText" class="text-green-500">Web Developer</span>
+        </h1>
+        <p class="text-gray-600 mt-2">I create beautiful, responsive websites.</p>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="mt-10 px-6 text-center" data-aos="fade-left">
+        <h2 class="text-3xl font-semibold text-blue-600">About Me</h2>
+        <p class="text-gray-700 mt-4 max-w-2xl mx-auto">
+            Hi, I'm Ankita Mahajan, a creative Web Developer with expertise in front-end technologies 
+            like HTML, CSS, Tailwind, JavaScript, and Bootstrap. My focus is on designing engaging 
+            and interactive user experiences, and I’m constantly exploring new technologies to enhance
+            my skills and stay ahead in the web development field. I am passionate about continuous 
+            learning and always looking for ways to grow and improve my craft.
+        </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="mt-10 px-6 text-center" data-aos="fade-right">
+        <h2 class="text-3xl font-semibold text-blue-600">My Projects</h2>
+        <div class="grid md:grid-cols-2 gap-6 mt-6 max-w-4xl mx-auto">
+
+            <!-- Project 1 -->
+            <div class="bg-white shadow-lg p-4 rounded">
+                <h3 class="text-xl font-bold text-gray-800">Parlour Appointment</h3>
+                <p class="text-gray-600">A Parlour Appointment System using PHP, HTML, CSS, MySQL, and JavaScript allows users to book and manage appointments online. It displays services, lets users schedule appointments, and view bookings. The system stores data in MySQL, processes bookings with PHP, and enhances interactivity using JavaScript, ensuring a seamless experience for customers and staff. 🚀
+                <button class="bg-black text-white px-4 py-2 rounded mt-4 animate-bounce">
+                    <a href="https://ankitamahajan2006.github.io/Parlour_Appointment/" class="text-gray-500">View Project</a>
+                </button>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="bg-white shadow-lg p-4 rounded">
+                <h3 class="text-xl font-bold text-gray-800">Human Rights</h3>
+                <p class="text-gray-600">A Human Rights Website built using HTML, CSS, JavaScript, and Bootstrap raises awareness about fundamental rights. It includes five pages: Home, About, Issue, Action, and Contact, providing information on human rights, key issues, and ways to take action. The responsive design ensures accessibility, making it an effective platform for education and advocacy. 🚀</p>
+                <button class="bg-black text-white px-4 py-2 rounded mt-4 animate-bounce">
+                    <a href="https://ankitamahajan2006.github.io/Hunam-Rights/" class="text-gray-500">View Project</a>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="mt-10 px-6">
+        <h2 class="text-2xl font-semibold text-center text-blue-600">Skills</h2>
+        <div class="flex justify-center gap-4 mt-4">
+            <span class="bg-blue-500 text-white px-4 py-2 rounded">HTML</span>
+            <span class="bg-green-500 text-white px-4 py-2 rounded">CSS</span>
+            <span class="bg-yellow-500 text-white px-4 py-2 rounded">JavaScript</span>
+            <span class="bg-blue-500 text-white px-4 py-2 rounded">Tailwind CSS</span>
+            <span class="bg-green-500 text-white px-4 py-2 rounded">React.js</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center p-4 mt-10">
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const textArray = ["Web Developer", "UI/UX Designer", "Problem Solver"];
+                let index = 0;
+                
+                function changeText() {
+                    document.getElementById("changingText").innerText = textArray[index];
+                    index = (index + 1) % textArray.length;
+                }
+
+                setInterval(changeText, 2000);
+            });
+        </script>
+                
+        &copy; 2025 Ankita Mahajan. All Rights Reserved.
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, 
+            once: true, 
+        });
+    </script>
+
+</body>
+</html>
